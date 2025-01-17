@@ -53,6 +53,8 @@ Enkrypt is a web3 wallet built from the ground up to support the multi-chain fut
 - Ontology
 - Puppy Net
 - Arthera
+- Syscoin
+- Rollux
 - Caga Ankara Testnet
 - More coming soon!
 

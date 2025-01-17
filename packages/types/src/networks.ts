@@ -1,4 +1,8 @@
 export enum NetworkNames {
+  SyscoinNEVMTest = "TSYS",
+  SyscoinNEVM = "SYS",
+  RolluxTest = "TRLX",
+  Rollux = "RLX",
   Ethereum = "ETH",
   Okc = "OKT",
   Binance = "BNB",
@@ -66,14 +70,12 @@ export enum NetworkNames {
   FormTestnet = "FormTestnet",
   AssetHubDOT = "AssetHubDOT",
   AssetHubKSM = "AssetHubKSM",
-  SyscoinTest = "TSYS",
-  Syscoin = "SYS",
-  RolluxTest = "TRLX",
-  Rollux = "RLX",
   CagaAnkara = "CagaAnkara"
 }
 
 export enum CoingeckoPlatform {
+  Syscoin = "syscoin",
+  Rollux = "rollux",
   Ethereum = "ethereum",
   Binance = "binance-smart-chain",
   EthereumClassic = "ethereum-classic",

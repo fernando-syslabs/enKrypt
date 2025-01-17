@@ -32,10 +32,10 @@ import shibNode from "./shib";
 import artheraNode from "./aa";
 import formTestnet from "./form-testnet";
 import artheraTestNode from "./aat";
-import syscoinTestNode from "./tsys";
-import syscoinNode from "./sys";
-import rolluxTestNode from "./trlx";
-import rolluxNode from "./rlx";
+import syscoinNEVMTestNode from "./syscoin/nevm-testnet";
+import syscoinNEVMNode from "./syscoin/nevm";
+import rolluxTestNode from "./syscoin/rollux-testnet";
+import rolluxNode from "./syscoin/rollux";
 import cagaAnkara from "./cagaAnkara";
 
 export default {
@@ -82,8 +82,8 @@ export default {
   arthera: artheraNode,
   formTestnet: formTestnet,
   artheraTest: artheraTestNode,
-  syscoinTest: syscoinTestNode,
-  syscoin: syscoinNode,
+  syscoinNEVMTest: syscoinNEVMTestNode,
+  syscoinNEVM: syscoinNEVMNode,
   rolluxTest: rolluxTestNode,
   rollux: rolluxNode,
   cagaAnkara: cagaAnkara,

@@ -21,12 +21,21 @@ import { getKnownNetworkTokens } from "./token-lists";
 import { CoingeckoPlatform, NetworkNames } from "@enkryptcom/types";
 import { NATIVE_TOKEN_ADDRESS } from "../common";
 import getTomoBalances from "./tomochain";
+import getBlockscoutBalances from "./blockscout";
 import { CoinGeckoTokenMarket } from "@/libs/market-data/types";
 
 const API_ENPOINT = "https://tokenbalance.mewapi.io/";
 const API_ENPOINT2 = "https://partners.mewapi.io/balances/";
 
 const supportedNetworks: Record<SupportedNetworkNames, SupportedNetwork> = {
+  [NetworkNames.SyscoinNEVM]: {
+    cgPlatform: CoingeckoPlatform.Syscoin,
+    bsEndpoint: true,
+  },
+  [NetworkNames.Rollux]: {
+    cgPlatform: CoingeckoPlatform.Rollux,
+    bsEndpoint: true,
+  },
   [NetworkNames.Binance]: {
     tbName: "bsc",
     cgPlatform: CoingeckoPlatform.Binance,
@@ -123,6 +132,8 @@ const getTokens = (
 ): Promise<TokenBalance[]> => {
   if (chain === NetworkNames.TomoChain) {
     return getTomoBalances(chain, address);
+  } else if (supportedNetworks[chain].bsEndpoint) {
+    return getBlockscoutBalances(chain, address);
   }
   let url = "";
   if (chain === NetworkNames.Ethereum || chain === NetworkNames.Binance)
